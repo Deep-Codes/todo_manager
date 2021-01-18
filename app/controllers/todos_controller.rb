@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     render plain: Todo.all.map { |todo| todo.to_beautiful_string }.join("\n")
   end
