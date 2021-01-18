@@ -1,0 +1,97 @@
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.todo-container {
+  max-width: 460px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #453c52;
+  letter-spacing: 0.14px;
+}
+
+input {
+  background: #ffffff;
+  border: 1px solid #bfb8cc;
+  border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #726a7e;
+  letter-spacing: 0.1px;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.btn-add {
+  color: white;
+  background: #48bb78;
+  border-radius: 4px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  height: 32px;
+  font-weight: bold;
+  width: 80px;
+}
+
+.list-heading {
+  font-size: 14px;
+  color: #453c52;
+  letter-spacing: 0.1px;
+}
+
+.trash {
+  width: 15px;
+  opacity: 0.7;
+  margin-left: 20px;
+  display: none;
+}
+
+.todo-item {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 5px 5px;
+  margin: 10px 0px;
+}
+.todo-item:hover {
+  background: #f1edf7;
+  border-radius: 4px;
+  border-radius: 4px;
+}
+
+.todo-item:hover .trash {
+  display: block;
+}
+
+input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.overdue {
+  font-size: 12px;
+  color: #c53030;
+  letter-spacing: 0.09px;
+  margin: 0px 10px;
+}
+
+.number {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #453c52;
+  letter-spacing: 0.09px;
+  font-weight: 400;
+}
