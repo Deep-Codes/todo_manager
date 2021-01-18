@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
   def to_beautiful_string
-    "UserTableHere"
+    "Name: #{name} Email: #{email}  Pass: #{password}"
   end
 end
