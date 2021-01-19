@@ -1,0 +1,24 @@
+<h1>Welcome User</h1>
+<section class='user-container'>
+  <%= form_with url: users_path do |form| %>
+<div class='user-form-field'>
+    <p class='user-form-label'>First Name: </p>
+    <%= form.text_field :first_name %>
+  </div>
+  <div class='user-form-field'>
+    <p class='user-form-label'>Last Name: </p>
+    <%= form.text_field :last_name %>
+  </div>
+  <div class='user-form-field'>
+    <p class='user-form-label'>Email: </p>
+    <%= form.email_field :email %>
+  </div>
+  <div class='user-form-field'>
+    <p class='user-form-label'>Password:</p>
+    <%= form.password_field :password %>
+  </div>
+  <div class='user-form-field'>
+    <%= form.submit "Sign-Up", class: "submit-btn" %>
+  </div>
+<% end %>
+</section>
