@@ -1,13 +1,21 @@
 <div class="list-container">
   <h4 class="list-heading"> <%= section_title %><span class="number"> <%= todos.is_completed.count %>/<%= todos.count %> </span></h4>
   <% todos.each do |todo| %>
+    <% if !todo.completed || show_incompleted_todos %>
     <div class="todo-item">
-      <input type="checkbox">
-      <p> <%= todo.todo_text %></p> 
+      <% if todo.completed %>
+        <input type="checkbox" checked >
+        <strike> <%= todo.todo_text %></strike> 
+      <% end %>
+      <% if !todo.completed %>
+        <input type="checkbox" >
+        <p> <%= todo.todo_text %></p> 
+      <% end %>
       <% if show_due_date %>
       <span class='todo-date'> <%= todo.due_date.to_s(:short) %></span>
       <% end %>    
       <img src="/delete.svg" class="trash" alt=""> 
     </div>
+    <% end %>
   <% end %>  
 </div>
