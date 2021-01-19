@@ -22,7 +22,8 @@ h2 {
   letter-spacing: 0.14px;
 }
 
-input {
+input[type='text'],
+input[type='date'] {
   background: #ffffff;
   border: 1px solid #bfb8cc;
   border-radius: 4px;
@@ -54,10 +55,14 @@ input {
 }
 
 .trash {
-  width: 15px;
+  height: 15px;
   opacity: 0.7;
   margin-left: 20px;
   display: none;
+  background: none;
+  border: none;
+  border-radius: 0px;
+  outline: none;
 }
 
 .todo-item {

@@ -11,8 +11,11 @@
     <p class='<%= todo.completed ? "strike" : "" %>'> <%= todo.todo_text %> </p>
       <% if show_due_date %>
       <span class='todo-date'> <%= todo.due_date.to_s(:short) %></span>
-      <% end %>    
-      <img src="/delete.svg" class="trash" alt=""> 
+      <% end %>  
+      <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>  
+      <input type="image" src="/delete.svg"  class='trash'>
+
+      <% end %>
     </div>
     <% end %>
   <% end %>  
