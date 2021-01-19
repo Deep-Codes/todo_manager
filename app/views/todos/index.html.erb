@@ -1,0 +1,15 @@
+<div class="todo-container">
+    <h2>My Todo List</h2>
+    <div class="input-container">
+      <input type="text" placeholder="Enter a Todo">
+      <input type="date">
+      <button class="btn-add">Add</button>
+    </div>
+    <%= render partial: "todo-section",
+          locals: { section_title: "Overdue", todos: Todo.overdue, show_due_date: true } %>
+    <%= render partial: "todo-section",
+          locals: { section_title: "Due Today", todos: Todo.due_today, show_due_date: false } %>
+    <%= render partial: "todo-section",
+          locals: { section_title: "Due Later", todos: Todo.due_later, show_due_date: true } %>
+
+</div>
