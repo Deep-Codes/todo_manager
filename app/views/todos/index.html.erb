@@ -1,10 +1,10 @@
 <div class="todo-container">
     <h2>My Todo List</h2>
-    <form class="input-container" action="/todos" method="POST">
+    <%= form_with(url: "/todos/", method: "POST") do %>
       <input type="text" placeholder="Enter a Todo" name="todo_text">
       <input type="date" name="due_date">
       <input class="btn-add" type='submit' value="Add" />
-    </form>
+    <% end %>
     <%= render partial: "todo-section",
                locals: { section_title: "Overdue", todos: Todo.overdue, show_due_date: true, show_incompleted_todos: false } %>
     <%= render partial: "todo-section",
