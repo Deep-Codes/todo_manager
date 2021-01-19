@@ -1,8 +1,8 @@
 <div class="todo-container">
     <h2>My Todo List</h2>
-    <%= form_with(url: "/todos/", method: "POST") do %>
-      <input type="text" placeholder="Enter a Todo" name="todo_text">
-      <input type="date" name="due_date">
+    <%= form_with(url: "/todos/", method: "POST", class: "input-container") do %>
+      <%= text_field_tag "todo_text", nil, placeholder: "Enter a Todo" %>
+      <%= text_field_tag "due_date", nil, type: "date" %>
       <input class="btn-add" type='submit' value="Add" />
     <% end %>
     <%= render partial: "todo-section",
