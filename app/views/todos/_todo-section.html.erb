@@ -3,14 +3,12 @@
   <% todos.each do |todo| %>
     <% if !todo.completed || show_incompleted_todos %>
     <div class="todo-item">
-      <% if todo.completed %>
-        <input type="checkbox" checked >
-        <strike> <%= todo.todo_text %></strike> 
-      <% end %>
-      <% if !todo.completed %>
-        <input type="checkbox" >
-        <p> <%= todo.todo_text %></p> 
-      <% end %>
+
+    <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
+      <input type="checkbox" name='completed' <%= todo.completed ? "checked" : "" %> onclick="this.form.submit()">
+    <% end %>
+      
+    <p class='<%= todo.completed ? "strike" : "" %>'> <%= todo.todo_text %> </p>
       <% if show_due_date %>
       <span class='todo-date'> <%= todo.due_date.to_s(:short) %></span>
       <% end %>    
