@@ -1,21 +1,23 @@
 <div class="list-container">
-  <h4 class="list-heading"> <%= section_title %><span class="number"> <%= todos.is_completed.count %>/<%= todos.count %> </span></h4>
+  <h4 class="list-heading"> 
+    <%= section_title %>
+      <span class="number">
+        <%= todos.is_completed.count %>/<%= todos.count %> 
+      </span>
+  </h4>
   <% todos.each do |todo| %>
     <% if !todo.completed || show_incompleted_todos %>
     <div class="todo-item">
-
-    <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
-      <input type="checkbox" name='completed' <%= todo.completed ? "checked" : "" %> onclick="this.form.submit()">
-    <% end %>
-      
-    <p class='<%= todo.completed ? "strike" : "" %>'> <%= todo.todo_text %> </p>
-      <% if show_due_date %>
-      <span class='todo-date'> <%= todo.due_date.to_s(:short) %></span>
-      <% end %>  
-      <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>  
-      <input type="image" src="/delete.svg"  class='trash'>
-
-      <% end %>
+        <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
+          <input type="checkbox" name='completed' <%= todo.completed ? "checked" : "" %> onclick="this.form.submit()">
+        <% end %> 
+        <p class='<%= todo.completed ? "strike" : "" %>'> <%= todo.todo_text %> </p>
+        <% if show_due_date %>
+          <span class='todo-date'> <%= todo.due_date.to_s(:short) %></span>
+        <% end %>  
+        <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>  
+          <input type="image" src="/delete.svg"  class='trash'>
+        <% end %>
     </div>
     <% end %>
   <% end %>  
