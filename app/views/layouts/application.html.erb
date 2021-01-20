@@ -12,9 +12,10 @@
 
   <body class='todo-container'>
     <% if @current_user %>
-      <p class='user-header'>
+      <div class='user-header'>
         Welcome Back <%= @current_user.first_name %>!
-      </p>
+        <%= link_to "Sign-Out", destroy_session_path, method: "delete" %>
+      </div>
     <% end %>
   
     <%= yield %>

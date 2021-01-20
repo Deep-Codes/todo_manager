@@ -113,6 +113,8 @@ input[type='checkbox'] {
 }
 
 .user-header {
+  display: flex;
+  justify-content: space-between;
   background-color: lightgray;
   padding: 10px;
   color: black;
