@@ -6,7 +6,6 @@
       </span>
   </h4>
   <% todos.each do |todo| %>
-    <% if !todo.completed || show_incompleted_todos %>
     <div class="todo-item">
         <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
           <input type="checkbox" name='completed' <%= todo.completed ? "checked" : "" %> onclick="this.form.submit()">
@@ -19,6 +18,5 @@
           <input type="image" src="/delete.svg"  class='trash'>
         <% end %>
     </div>
-    <% end %>
   <% end %>  
 </div>
