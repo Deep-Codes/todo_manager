@@ -14,8 +14,15 @@ class UsersController < ApplicationController
     last_name = params[:last_name]
     email = params[:email]
     password = params[:password]
-    User.create!(first_name: first_name, email: email, password: password, last_name: last_name)
-    redirect_to "/"
+    new_user = User.new(first_name: first_name, email: email, password: password, last_name: last_name)
+    new_user.save
+
+    if new_user.save
+      redirect_to "/"
+    else
+      flash[:error] = new_user.errors.full_messages.join(" , ")
+      redirect_to new_user_path
+    end
   end
 
   def login

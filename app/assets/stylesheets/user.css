@@ -2,7 +2,7 @@
   padding: 20px 0px;
 }
 
-input[type='text'],
+.user-container input[type='text'],
 input[type='email'],
 input[type='password'] {
   margin: 10px 0px;
