@@ -1,3 +1,11 @@
 .home-text {
   margin: 20px 0px;
 }
+
+.flash-container {
+  padding: 10px;
+  margin: 10px 0px;
+  text-align: center;
+  background-color: rgb(236, 187, 187);
+  color: red;
+}
