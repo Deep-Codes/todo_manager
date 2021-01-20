@@ -1,0 +1,16 @@
+<h1>Sign In</h1>
+<section class='user-container'>
+  <%= form_with url: sessions_path do |form| %>    
+  <div class='user-form-field'>
+    <p class='user-form-label'>Email: </p>
+    <%= form.email_field :email %>
+  </div>
+  <div class='user-form-field'>
+    <p class='user-form-label'>Password:</p>
+    <%= form.password_field :password %>
+  </div>
+  <div class='user-form-field'>
+    <%= form.submit "Sign-In", class: "submit-btn" %>
+  </div>
+<% end %>
+</section>
