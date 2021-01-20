@@ -111,3 +111,9 @@ input[type='checkbox'] {
 .strike {
   text-decoration: line-through;
 }
+
+.user-header {
+  background-color: lightgray;
+  padding: 10px;
+  color: black;
+}
