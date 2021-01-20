@@ -4,11 +4,8 @@ class TodosController < ApplicationController
     render "index"
   end
 
-  def show
-    id = params[:id]
-    render plain: Todo.find(id).to_beautiful_string
-  end
-
+  # Saves Todo Based on ActiveRecord Validation from Todo.rb
+  # if done => /todos for refresh
   def create
     todo_text = params[:todo_text]
     due_date = params[:due_date]
@@ -20,8 +17,6 @@ class TodosController < ApplicationController
       flash[:error] = new_todo.errors.full_messages.join(" , ")
       redirect_to todos_path
     end
-    # render plain: "Hey your new Todo is Created with the id : #{new_todo[:id]}"
-
   end
 
   def update
@@ -30,7 +25,6 @@ class TodosController < ApplicationController
     complete = todo.completed
     todo.completed = !complete
     todo.save!
-    # render plain: "Todo with id: #{id} is set to #{!complete}"
     redirect_to todos_path
   end
 

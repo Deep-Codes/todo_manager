@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_logged_in
 
+  # Renders users/new.html.erb
+  # New Sign-In Page
   def new
     render "users/new"
   end
 
-  def index
-    render plain: User.all.map { |user| user.to_beautiful_string }.join("\n")
-  end
-
+  # New User Creation
   def create
     first_name = params[:first_name]
     last_name = params[:last_name]
@@ -22,17 +21,6 @@ class UsersController < ApplicationController
     else
       flash[:error] = new_user.errors.full_messages.join(" , ")
       redirect_to new_user_path
-    end
-  end
-
-  def login
-    email = params[:email]
-    password = params[:password]
-    login = User.where("email = ? and password = ? ", email, password)
-    if login.length > 0
-      render plain: true
-    else
-      render plain: false
     end
   end
 end
